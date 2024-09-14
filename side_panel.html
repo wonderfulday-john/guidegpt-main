@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Step-by-Step Guide Creator</title>
+  <link rel="stylesheet" href="side_panel.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+  <header>
+    <h1>Guide Creator</h1>
+  </header>
+  
+  <main>
+    <div id="controls">
+      <button id="startRecording"><i class="fas fa-play"></i> Start Recording</button>
+      <button id="stopRecording"><i class="fas fa-stop"></i> Stop Recording</button>
+    </div>
+    
+    <div id="stepCounter">
+      <span id="currentStepCount"></span> steps recorded
+    </div>
+    
+    <div id="stepList"></div>
+    
+    <div id="exportOptions" style="display: none;">
+      <button id="exportGuide"><i class="fas fa-file-export"></i> Export Guide</button>
+    </div>
+  </main>
+  
+  <footer>
+    <p>&copy; 2023 Guide Creator. All rights reserved.</p>
+  </footer>
+
+  <script src="side_panel.js"></script>
+</body>
+</html>

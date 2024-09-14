@@ -1,0 +1,43 @@
+{
+  "manifest_version": 3,
+  "name": "Step-by-Step Guide Creator",
+  "version": "1.0.1",
+  "description": "Creates step-by-step guides with automatic screenshots and click highlights.",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "tabs",
+    "sidePanel",
+    "webNavigation"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Step-by-Step Guide Creator"
+  },
+  "side_panel": {
+    "default_path": "side_panel.html"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["side_panel.html", "side_panel.js", "side_panel.css"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self';"
+  }
+}
